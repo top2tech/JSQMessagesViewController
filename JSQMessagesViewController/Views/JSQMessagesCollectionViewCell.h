@@ -167,6 +167,8 @@
  */
 @property (weak, nonatomic, readonly) UITapGestureRecognizer *tapGestureRecognizer;
 
+@property (weak, nonatomic, readwrite) NSIndexPath *indexPath;
+
 #pragma mark - Class methods
 
 /**
