@@ -282,21 +282,6 @@ JSQMessagesKeyboardControllerDelegate>
        [self jsq_resetLayoutAndCaches];
 }
 
-- (void)jsq_resetLayoutAndCaches
-{
-    if (CGRectGetWidth(self.collectionView.frame) != self.jsq_collectionViewFrameWidth) {
-        
-        self.jsq_collectionViewFrameWidth = CGRectGetWidth(self.collectionView.frame);
-        
-        // invalidate layout
-        JSQMessagesCollectionViewFlowLayoutInvalidationContext *context = [JSQMessagesCollectionViewFlowLayoutInvalidationContext context];
-        context.invalidateFlowLayoutMessagesCache = YES;
-        [self.collectionView.collectionViewLayout invalidateLayoutWithContext:context];
-    }
-}
-
-
-
 - (void)viewWillAppear:(BOOL)animated
 {
     NSParameterAssert(self.senderId != nil);
